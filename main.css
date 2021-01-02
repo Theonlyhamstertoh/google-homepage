@@ -1,0 +1,188 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration:none;
+  color: #000;
+  opacity: 0.75;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 13px;
+}
+
+a:hover{
+  text-decoration: underline;
+}
+
+#bigContainer {
+  display: grid;
+  min-height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas: 
+    "header"
+    "main"
+    "footer";
+}
+
+/* header */
+#bigContainer > header {
+  display: grid;
+  grid-template-columns: 50px 50px auto 50px 50px 50px 50px;
+  margin: 13px 10px 0 10px;
+  grid-template-areas: 
+    "about store . gmail images menu logo";
+    
+}
+
+
+#about {
+  grid-area: about;
+  place-self: center;
+}
+#store {
+  grid-area: store;
+  place-self: center;
+}
+#gmail {
+  grid-area: gmail;
+  place-self: center;
+}
+#images {
+  grid-area: images;
+  place-self: center;
+}
+#menu {
+  grid-area: menu;
+  place-self: center;
+  opacity: .60;
+  position: relative;
+  top: 2px;
+
+}
+#logo {
+  grid-area: logo;
+  place-self: center  ;
+}
+
+#logochange { 
+  border-radius: 100%;
+  position: relative;
+  top: 1.5px;
+}
+
+#logochange:hover {
+  box-shadow: 0 1px 1px 0px rgba(165, 165, 165, 0.746)
+}
+
+/* Main */
+#bigContainer > main {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-rows: 200px 50px;
+  grid-template-areas: 
+    ". google-logo ."
+    ". search-bar ."
+    ". flexbox . ";
+}
+
+#google-logo {
+  grid-area: google-logo;
+  place-self: center;
+}
+
+#share {
+  grid-area: google-logo;
+  place-self: end;
+  position: relative;
+  top: -30px;
+  right: 100px;
+
+}
+
+#search-bar {
+  grid-area: search-bar;
+  width: 430px;
+  height: 44px;
+  border-radius: 20px;
+  border: 1px solid #d1d1d1;
+  background-image: url(images/google-search.gif);
+  place-self: center;
+  font-size: 15px;
+  
+
+  background-position: center left;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-size:15%;
+  background-position:-3vmin;
+  outline: none;
+  padding-left: 40px;
+  padding-right: 50px;
+}
+
+
+.button {
+  width: 120px;
+  height: 35px;
+  margin-top: 30px;
+  background-color: #f8f9fa;
+  border: none;
+  margin: 30px 5px 15px 5px;
+  color: #444;
+}
+
+
+
+#flexbox {
+  display: flex;
+  grid-area: flexbox;
+  justify-content: center;
+}
+
+
+/* Footer */
+#bigContainer > footer {
+  display: grid;
+  grid-template-columns: 80px 80px auto 1fr 70px 70px 70px;
+  grid-template-rows: 40px;
+  grid-template-areas: "ad business how-search-work  carbon-neutral privacy terms setting ";
+  background-color: #f2f2f2 ;
+  border-top: 1px solid #dadce0;
+  min-width: 400px;
+  justify-content: space-between;
+}
+
+#ad {
+  grid-area: ad;
+  place-self: center;
+  padding-left: 10px;
+
+}
+#business {
+  grid-area: business;
+  place-self: center;
+}
+#how-search-work {
+  grid-area: how-search-work;
+  place-self: center;
+}
+#carbon-neutral {
+  grid-area: carbon-neutral;
+  justify-self: center;
+  align-self: center;
+
+}
+#privacy {
+  grid-area: privacy;
+  place-self: center;
+}
+#terms {
+  grid-area: terms;
+  place-self: center;
+}
+#setting {
+  grid-area: setting;
+  place-self: center;
+}
+
